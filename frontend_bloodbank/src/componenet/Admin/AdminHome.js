@@ -36,17 +36,18 @@ const AdminHome = () => {
                   <div class="center  border-right">
                   <div className='d-grid gap-4' >
                       <tr >
-    <Link to={`/adminList/a/${admin.id}`}><button className="btn btn-primary col-4  rounded-pill mt-2 " style={{ 
+    <Link to={`/adminprofile`}><button className="btn btn-danager col-4 ms-3  rounded-pill mt-2 " style={{ 
         textDecoration:null,
         width: 350,
         height: 50,
         borderRadius: 140 / 2,
-        backgroundColor: '#194D33',
+        backgroundColor: '#e7b6c5',
+        color: 'black',
         transform: [
           { scaleX: 2 }
         ]
       }}>Profile</button></Link> 
-       <Link to={`/OrderList`}><button className="btn btn-danager col-4 ms-3  rounded-pill  mt-2 " style={{
+       <Link to={`/bloodbankdashboard`}><button className="btn btn-danager col-4 ms-3  rounded-pill  mt-2 " style={{
         width: 350,
         height: 50,
         borderRadius: 140 / 2,
@@ -54,19 +55,19 @@ const AdminHome = () => {
         transform: [
           { scaleX: 2 } 
         ]
-    }} >All Orders</button></Link>
-                         <Link to={`/adminCustomerList/a/${admin.id}`}><button className="btn btn-danager col-4  ms-3 rounded-pill mt-2 mb-2" style={{
+    }} >Blood Bank Dashboard</button></Link>
+                         <Link to={`/donardashboard`}><button className="btn btn-danager col-4  ms-3 rounded-pill mt-2 mb-2" style={{
         width: 350,
         height: 50,
         borderRadius: 140 / 2,
-        backgroundColor: '#0288D1',
+        backgroundColor: '#c0ffdf',
         transform: [
           { scaleX: 2 }
         ]
-    }} >Customer List</button></Link>    
+    }} >Donor List</button></Link>    
                       </tr>
                       <tr>
-    <Link to={`/adminSupplierList/a/${admin.id}`}><button className="btn btn-danager col-4 rounded-pill mt-2" style={{
+   {/* <Link to={`/adminSupplierList/a/${admin.id}`}><button className="btn btn-danager col-4 rounded-pill mt-2" style={{
         width: 350,
         height: 50,
         borderRadius: 140 / 2,
@@ -85,7 +86,7 @@ const AdminHome = () => {
           { scaleX: 2 }
         ]
     }} >Admin List</button></Link> 
-    <Link to={`/Addadmin`}><button className="btn btn-danager col-4  ms-3 rounded-pill mt-2 mb-2" style={{
+  {/*  <Link to={`/Addadmin`}><button className="btn btn-danager col-4  ms-3 rounded-pill mt-2 mb-2" style={{
         width: 350,
         height: 50,
         borderRadius: 140 / 2,
@@ -94,11 +95,11 @@ const AdminHome = () => {
         transform: [
           { scaleX: 2 }
         ]
-    }} >Add Admin</button></Link> 
+    }} >Add Admin</button></Link> */} 
                          
                       </tr>
                       <tr>
-     <Link to={`/editadmin/${admin.id}`}><button className="btn btn-danager col-4  rounded-pill " style={{
+ {/*}    <Link to={`/editadmin/${admin.id}`}><button className="btn btn-danager col-4  rounded-pill " style={{
         width: 350,
         height: 50,
         borderRadius: 140 / 2,
@@ -106,8 +107,8 @@ const AdminHome = () => {
         transform: [
           { scaleX: 2 }
         ]
-    }} >Change Password</button></Link>
-    <Link to={`/contactUs`}><button className="btn btn-danager col-4  ms-3 rounded-pill mt-2 mb-2" style={{
+    }} >Change Password</button></Link>  */}
+   {/* <Link to={`/contactUs`}><button className="btn btn-danager col-4  ms-3 rounded-pill mt-2 mb-2" style={{
         width: 350,
         height: 50,
         borderRadius: 140 / 2,
@@ -115,7 +116,7 @@ const AdminHome = () => {
         transform: [
           { scaleX: 2 }
         ]
-    }} >Contact Us</button></Link> 
+    }} >Contact Us</button></Link>  */}
     <Link to={``}><button className="btn btn-danager col-4  ms-3 rounded-pill mt-2 mb-2" style={{
         width: 350,
         height: 50,
@@ -125,7 +126,7 @@ const AdminHome = () => {
         transform: [
           { scaleX: 2 }
         ]
-    }} >Logout</button></Link> 
+    }} >Logout</button></Link>    
                       </tr>
                       </div>
                       </div>
@@ -138,4 +139,4 @@ const AdminHome = () => {
   )
 }
 
-export default AdminHome;
+export default AdminHome
