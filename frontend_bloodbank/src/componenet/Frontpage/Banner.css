@@ -1,0 +1,41 @@
+.banner {
+    margin-top: 0;
+    padding:50px 0 100px 0;
+    background-color: #FFF5E5 !important;;
+   
+  }
+
+  .banner h1 {
+    font-size: 65px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    line-height: 1;
+    margin-bottom: 20px;
+    display: block;
+    color: #0b0101;
+  }
+  .banner p {
+    color: #0b0101;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    width: 96%;
+  }
+
+
+  .banner img {
+    animation: updown 1s linear infinite;
+    background-image:url('../../asset/HomePage.png');
+  }
+  @keyframes updown {
+      0% {
+          transform: translateY(-20px);
+      }
+      50% {
+          transform: translateY(20px);
+      }
+      100% {
+          transform: translateY(-20px);
+      }
+  }
+ 

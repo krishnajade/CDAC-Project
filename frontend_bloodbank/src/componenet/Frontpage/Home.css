@@ -1,0 +1,31 @@
+n#home-img{
+    height: 500px;
+    width: auto;
+}
+.div-home{
+    padding: 50px 50px 50px 50px;
+
+}
+
+#home{
+    font-family:Google sans serif;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  
+    
+}
+.wrap{
+    font-size:l ;
+    color: red;
+}
+.center{
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+  }
+  
+  
