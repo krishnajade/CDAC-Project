@@ -9,7 +9,7 @@ const DonorHome = () => {
   const donor_id=sessionStorage["donor_id"];
   const navigate = useNavigate();
 
-  const profile = () => {
+  const DonorProfile = () => {
     navigate("/donorprofile");
     window.location.reload(false);
   };
@@ -55,9 +55,7 @@ const DonorHome = () => {
                   transform: [{ scaleX: 2 }],
                 }}
               />
-              {/* <span class="font-weight-bold">{Donor.Donor_name}</span>
-              <span class="text-black-50">{Donor.Donor_name}</span>
-              <span> </span> */}
+             
             </div>
           </div>
           <div class="center  border-right">

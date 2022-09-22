@@ -60,7 +60,7 @@ const DonateRequest =()=>{
             <div class="bg-image" id="bg-image-signup">
               <div class="row" id='container'>
               <div class="col-sm-2" >
-               {/* <Multiimage></Multiimage> */}
+              
               </div>
                 <div class="col-sm-8 mt-3" id="signupForm">
   
