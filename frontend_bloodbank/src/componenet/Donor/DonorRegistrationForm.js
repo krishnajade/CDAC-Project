@@ -44,7 +44,7 @@ let DonorRegistrationForm = () => {
       body: JSON.stringify({
         donor_name: reg.donor_name,
         age: reg.age,
-        aadhar_no: reg.aadharno,
+        aadharno: reg.aadharno,
         address: reg.address,
         contact_number: reg.phonenumber,
         gender: reg.gender,
@@ -181,13 +181,13 @@ let DonorRegistrationForm = () => {
                     <div className="row">
                       <div className="col-md-5">
                         <h6>
-                          <label for="donorname">Aadhar number</label>
+                          <label for="aadharno"> Aadharno</label>
                         </h6>
                         <input
                           name="aadharno"
-                          type="text"
+                          type="text "
                           className="form-control"
-                          placeholder="Enter aadhar No"
+                          placeholder="Enter Your aadharno"
                           value={reg.aadharno}
                           onChange={(e) => {
                             dispatch({
@@ -203,7 +203,7 @@ let DonorRegistrationForm = () => {
 
                       <div className="col-md-5">
                         <h6>
-                          <label for="donorname">Address</label>
+                          <label for="address">Address</label>
                         </h6>
                         <input
                           name="address"
@@ -228,7 +228,7 @@ let DonorRegistrationForm = () => {
                     <div className="row">
                       <div className="col-md-5">
                         <h6>
-                          <label for="donorname">City</label>
+                          <label for="city">City</label>
                         </h6>
                         <input
                           name="city"
@@ -250,7 +250,7 @@ let DonorRegistrationForm = () => {
 
                       <div className="col-md-5">
                         <h6>
-                          <label for="donorname">Contact number</label>
+                          <label for="contact_number">Contact number</label>
                         </h6>
                         <input
                           name="phonenumber"
@@ -275,7 +275,7 @@ let DonorRegistrationForm = () => {
                     <div className="row">
                       <div className="col-md-5">
                         <h6>
-                          <label for="donorname">Email</label>
+                          <label for="email">Email</label>
                         </h6>
                         <input
                           name="email"
@@ -297,7 +297,7 @@ let DonorRegistrationForm = () => {
 
                       <div className="col-md-1">
                         <h6>
-                          <label for="donorname">Gender</label>
+                          <label for="gender">Gender</label>
                         </h6>
                         <select
                           name="gender"
@@ -319,7 +319,7 @@ let DonorRegistrationForm = () => {
 
                       <div className="col-md-">
                         <h6>
-                          <label for="donorname">Blood Group</label>
+                          <label for="bloodgroup">Blood Group</label>
                         </h6>
                         <select
                           name="bloodgroup"
@@ -413,10 +413,10 @@ let DonorRegistrationForm = () => {
                         Clear
                       </button>
                     </div>
-                    
+
                     <div className="anchorclass">
                       <a href="/signIn" class="link-danger">
-                        <h5>Sign in</h5> 
+                        <h5>Sign in</h5>
                       </a>
                     </div>
 

@@ -1,14 +1,13 @@
 import React from "react";
-import { Table } from "react-bootstrap";
-import { Link, Route, Routes } from "react-router-dom";
+
+import { Link } from "react-router-dom";
 import bloodbankicon from "../../asset/bloodbankicon.jpg";
 import { useNavigate } from "react-router-dom";
 import "./BloodBankHome.css";
-import BloodBankProfile from "./BloodBankProfile";
 
 const BloodBankHome = () => {
   const bloodbank_name = sessionStorage["bloodbank_name"];
-  const bloodbank_id = sessionStorage["bloodBank_id"];
+
   const navigate = useNavigate();
 
   const profile = () => {

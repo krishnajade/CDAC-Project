@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import React, {  } from "react";
+import { Link,  useNavigate } from "react-router-dom";
 import donorlogo from "../../asset/DonorIcon.jpg";
-import DonorProfile from "./DonorProfile";
+
 
 const DonorHome = () => {
-  // const [Donor] = useState([]);
+  
   const donor_name = sessionStorage["donor_name"];
   const donor_id = sessionStorage["donor_id"];
   const navigate = useNavigate();
@@ -13,10 +13,7 @@ const DonorHome = () => {
     navigate("/donorprofile");
     window.location.reload(false);
   };
-  const showdonor = () => {
-    navigate("/donorprofile");
-    window.location.reload(false);
-  };
+  
 
   const logoutUser = () => {
     sessionStorage.removeItem("user_id");

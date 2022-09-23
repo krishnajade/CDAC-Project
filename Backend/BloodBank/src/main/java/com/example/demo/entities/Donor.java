@@ -22,7 +22,7 @@ public class Donor {
 	@Column
 	private String blood_group;
 	@Column
-	private String aadharno;	
+	private int aadharno;	
 	@Column
 	private String address;
 	@Column
@@ -44,7 +44,7 @@ public class Donor {
 		super();
 	}
 
-	public Donor(int donor_id, String donor_name, String blood_group, String aadharno, String address, String city,
+	public Donor(int donor_id, String donor_name, String blood_group, int aadharno, String address, String city,
 			String contact_number, String gender, int age, String email) {
 		super();
 		this.donor_id = donor_id;
@@ -59,7 +59,7 @@ public class Donor {
 		this.email = email;
 	}
 
-	public Donor(int donor_id, String donor_name, String blood_group, String aadharno, String address, String city,
+	public Donor(int donor_id, String donor_name, String blood_group, int aadharno, String address, String city,
 			String contact_number, String gender, int age, String email, Login login) {
 		super();
 		this.donor_id = donor_id;
@@ -99,11 +99,11 @@ public class Donor {
 		this.blood_group = blood_group;
 	}
 
-	public String getAadharno() {
+	public int getAadharno() {
 		return aadharno;
 	}
 
-	public void setAadharno(String aadharno) {
+	public void setAadharno(int aadharno) {
 		this.aadharno = aadharno;
 	}
 

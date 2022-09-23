@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="logintable")
 public class Login {
@@ -15,14 +16,13 @@ public class Login {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int user_id;
-	@Column
+	@Column(unique=true)
 	String user_name;
 	@Column
 	String password;
 	@Column
 	String member_type;
 	
-
 	public Login() {
 		super();
 	}

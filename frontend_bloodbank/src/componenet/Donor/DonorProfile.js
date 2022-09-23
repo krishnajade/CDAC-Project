@@ -33,11 +33,11 @@ const DonorProfile = () => {
   const donorhome = () => {
     navigate("/donorhome");
   };
-  const deletedonor = (user_id, e) => {
+  const deletedonor = (id, e) => {
     e.preventDefault();
     if (window.confirm("confirm delete")) {
       axios
-        .delete(`http://localhost:8080/deleteDonor?user_id=${user_id}`)
+        .delete(`http://localhost:8080/deleteDonor?user_id=${id}`)
         .then((res) => console.log("Deleted..."))
         .catch((err) => console.log(err));
       alert("Account Deleted");
@@ -205,22 +205,29 @@ const DonorProfile = () => {
                   </div>
 
                   <div className="mb-3">
-                    <label className="form-label">bloodgroup</label>
-                    <input
-                      name="bloodgroup"
-                      type="text"
-                      className="form-control"
-                      placeholder="Enter bloodgroup"
-                      value={reg.bloodgroup}
-                      onChange={(e) => {
-                        dispatch({
-                          type: "update",
-                          field: "bloodgroup",
-                          val: e.target.value,
-                        });
-                      }}
-                      required
-                    />
+                    <label className="form-label">Bloodgroup</label>
+                    <br></br>
+                    <select
+                          name="bloodgroup"
+                          value={reg.bloodgroup}
+                          onChange={(e) => {
+                            dispatch({
+                              type: "update",
+                              field: "bloodgroup",
+                              val: e.target.value,
+                            });
+                          }}
+                        >
+                          <option>Select blood Group</option>
+                          <option value="A+">A+</option>
+                          <option value="A-">A-</option>
+                          <option value="B+">B+</option>
+                          <option value="B-">B-</option>
+                          <option value="AB+">AB+</option>
+                          <option value="AB-">AB-</option>
+                          <option value="O+">O+</option>
+                          <option value="O-">O-</option>
+                        </select>
                   </div>
 
                   <div className="mb-3">
@@ -267,7 +274,7 @@ const DonorProfile = () => {
                       className="btn btn-md btn-block btn-danger fw-bold "
                       style={{ marginLeft: "10px" }}
                       onClick={(e) => {
-                        deletedonor(reg.user_id, e);
+                        deletedonor(reg.id, e);
                       }}
                     >
                       Delete donor
