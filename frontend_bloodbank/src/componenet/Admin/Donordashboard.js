@@ -11,7 +11,6 @@ function Donordashboard() {
       setDonorlist(getdata);
       // console.log(getdata);
     };
-
     getDonorlist();
   }, []);
 

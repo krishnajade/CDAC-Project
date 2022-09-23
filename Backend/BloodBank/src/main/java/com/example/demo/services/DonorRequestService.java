@@ -17,21 +17,21 @@ public class DonorRequestService {
 	public DonorRequest save(DonorRequest dr)
 	{
 		return drrepo.save(dr);
-	}
-	
+	}	
 	public List<DonorRequest> getAllById(int id)
 	{
 		return drrepo.getAllById(id);
-	}
-	
+	}	
 	public List<DonorRequest> getAllByIdStatus(int id,String st)
 	{
 		return drrepo.getAllByIdStatus(id, st);
 	}
-	
 	public int updateStatus(int id,String st)
 	{
 		return drrepo.updateStatus(id, st);
 	}
-
+	public List<DonorRequest> getRequestById(int id)
+	{
+		return drrepo.getRequestById(id);
+	}
 }

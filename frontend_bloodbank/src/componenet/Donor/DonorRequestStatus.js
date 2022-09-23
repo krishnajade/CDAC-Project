@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./bloodbankstock.css";
+import "../BloodBank/bloodbankstock.css";
 import { Link } from "react-router-dom";
 
-const DonorRequest = () => {
+const DonorRequestStatus = () => {
   const [request, setRequest] = useState([]);
 
   useEffect(() => {
     fetch(
-      `http://localhost:8080/alldonorrequestById?bloodbank_id=${sessionStorage["bloodbank_id"]}`
+      `http://localhost:8080/mydonorrequestById?donor_id=${sessionStorage["donor_id"]}`
     )
       .then((resp) => resp.json())
       .then((data) => setRequest(data));
@@ -18,7 +18,7 @@ const DonorRequest = () => {
     <div className="container-fluids">
       <div id="bloodstock">
         <h2 id="headline">
-          <b>Donor Request List</b>
+          <b>Donor Request Status</b>
         </h2>
         <table className="table table-danger table-striped">
           <thead>
@@ -46,7 +46,7 @@ const DonorRequest = () => {
         </table>
         <div>
           {" "}
-          <Link to="/bloodbankhome">
+          <Link to="/donorhome">
             <button className="btn btn-primary">Goto Home</button>
           </Link>
         </div>
@@ -54,4 +54,4 @@ const DonorRequest = () => {
     </div>
   );
 };
-export default DonorRequest;
+export default DonorRequestStatus;

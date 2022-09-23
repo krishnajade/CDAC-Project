@@ -26,21 +26,26 @@ public class DonorRequestController {
 	{
 		return drserv.save(dr);
 	}
-	@GetMapping("alldonorrequestById")
+	@GetMapping("/alldonorrequestById")
 	public List<DonorRequest> getAllById(@RequestParam("bloodbank_id") int id)
 	{
 		return drserv.getAllById(id);
 	}
 	
-	@GetMapping("donorrequestbystatus")
+	@GetMapping("/donorrequestbystatus")
 	public List<DonorRequest> getAllByIdStatus(@RequestParam("bloodbank_id") int id,@RequestParam("status") String st)
 	{
 		return drserv.getAllByIdStatus(id, st);
 	}
-	@PutMapping("updatedonorrequest")
+	@PutMapping("/updatedonorrequest")
 	public int updateStatus(@RequestParam("request_id") int id, @RequestParam("status") String st)
 	{
 		return drserv.updateStatus(id, st);
+	}
+	@GetMapping("/mydonorrequestById")
+	public List<DonorRequest> getRequestById(@RequestParam("donor_id") int id)
+	{
+		return drserv.getRequestById(id);
 	}
 
 }

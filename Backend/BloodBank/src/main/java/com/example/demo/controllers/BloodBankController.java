@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entities.BloodBank;
-import com.example.demo.entities.Login;
 import com.example.demo.services.BloodBankService;
 
 @CrossOrigin(origins="*")
@@ -53,6 +52,10 @@ public class BloodBankController {
 	{
 		return bbserv.save(b);
 	}
+	
+	
+	
+	
 	
 
 }

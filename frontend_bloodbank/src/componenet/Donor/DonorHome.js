@@ -77,7 +77,7 @@ const DonorHome = () => {
                   </button>
                 </Link>
 
-                <Link to={`/RequestBloodForm`}>
+                <Link to={`/DonorRequestStatus`}>
                   <button
                     className="btn btn-outline-primary col-4  ms-3 rounded-pill mt-2 mb-2"
                     style={{
@@ -86,8 +86,7 @@ const DonorHome = () => {
                       borderRadius: 140 / 2,
                       transform: [{ scaleX: 2 }],
                     }}
-                  >
-                    
+                  >                   
                     View Request Status
                   </button>
                 </Link>
@@ -124,34 +123,8 @@ const DonorHome = () => {
               </tr>
 
               <tr>
-                <Link to={``}>
-                  <button
-                    className=" btn btn-outline-danger col-4  rounded-pill "
-                    style={{
-                      width: 350,
-                      height: 50,
-                      borderRadius: 140 / 2,
-                      transform: [{ scaleX: 2 }],
-                    }}
-                  >
-                    Delete Account
-                  </button>
-                </Link>
-
-                <Link to={``}>
-                  <button
-                    className="btn btn-outline-dark col-4  ms-3 rounded-pill mt-2 mb-2"
-                    style={{
-                      width: 350,
-                      height: 50,
-                      borderRadius: 140 / 2,
-                      transform: [{ scaleX: 2 }],
-                    }}
-                    onClick={logoutUser}
-                  >
-                    Logout
-                  </button>
-                </Link>
+                
+                
               </tr>
             </div>
           </div>

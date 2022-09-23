@@ -37,6 +37,7 @@ import AcceptedHospRequest from './componenet/HospitalRequest/AcceptedRequest';
 import RejectedHospitalRequest from './componenet/HospitalRequest/RejectedRequest';
 import RequestToBlood from './componenet/Patient/RequestToBlood';
 import PatientRegistration from './componenet/Patient/PatientRegistation';
+import DonorRequestStatus from './componenet/Donor/DonorRequestStatus';
 
 function App() {
   return (
@@ -76,6 +77,10 @@ function App() {
       <Route exact path="/AllRequest" element={<AllRequest/>}/> 
       <Route exact path="/AcceptedHospitalRequest" element={<AcceptedHospRequest/>}/> 
       <Route exact path="/RejectedHospitalRequest" element={<RejectedHospitalRequest/>}/> 
+      <Route exact path="/DonorRequestStatus" element={<DonorRequestStatus/>}/>
+
+
+      
        </Routes>
        <Footer/>
     </div>

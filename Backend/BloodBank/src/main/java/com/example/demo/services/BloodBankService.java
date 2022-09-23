@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.demo.entities.BloodBank;
-import com.example.demo.entities.Login;
+
 import com.example.demo.repositories.BloodBankRepository;
 import com.example.demo.repositories.LoginRepository;
 
@@ -24,25 +24,21 @@ public class BloodBankService {
 	public BloodBank getById(int Id)
 	{
 		return bloodbankrepo.findById(Id).get();
-	}
-	
+	}	
 	public BloodBank save(BloodBank b)
 	{
 		return bloodbankrepo.save(b);
-	}
-	
+	}	
 	public void deleteBloodbank(int id)
 	{
 		try {
 			logrepo.deleteById(id);
-			bloodbankrepo.deleteByUserId(id);
-			
+			bloodbankrepo.deleteByUserId(id);		
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
 	public BloodBank updateBloodbank(int id,BloodBank b)
 	{
 		BloodBank bloodbank=null;
@@ -76,6 +72,5 @@ public class BloodBankService {
 		}
 		bloodbankrepo.save(bloodbank);
 		return bloodbank;
-	}
-	
+	}	
 }

@@ -25,5 +25,8 @@ public interface DonorRequestRepository extends JpaRepository<DonorRequest, Inte
 	@Modifying
 	@Query("update DonorRequest set status =?2 where request_id =?1")
 	public int updateStatus(int id ,String st);
+
+	@Query("select d from DonorRequest d where donor_id=?1")
+	public List<DonorRequest> getRequestById(int id);
 	
 }
