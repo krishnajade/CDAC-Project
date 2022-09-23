@@ -52,10 +52,4 @@ public class BloodBankController {
 	{
 		return bbserv.save(b);
 	}
-	
-	
-	
-	
-	
-
 }

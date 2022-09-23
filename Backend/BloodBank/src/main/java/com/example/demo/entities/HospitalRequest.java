@@ -10,7 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -54,7 +54,7 @@ public class HospitalRequest {
 	public HospitalRequest(int hospital_request_id, int hospital_id, String hospital_name, String hospital_phone_number,
 			int blood_bank_id, String blood_component, String request_status, int quantity, Date request_date) {
 		super();
-		hospital_request_id = hospital_request_id;
+		this.hospital_request_id = hospital_request_id;
 		this.hospital_id = hospital_id;
 		this.hospital_name = hospital_name;
 		this.hospital_phone_number = hospital_phone_number;
@@ -70,7 +70,7 @@ public class HospitalRequest {
 	}
 
 	public void setHospital_request_id(int hospital_request_id) {
-		hospital_request_id = hospital_request_id;
+		this.hospital_request_id = hospital_request_id;
 	}
 
 	public int getHospital_id() {
@@ -143,12 +143,5 @@ public class HospitalRequest {
 
 	public void setPatient(Patient patient) {
 		this.patient = patient;
-	}
-	
-	
-	
-	
-	
-	
-	
+	}	
 }

@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.entities.BloodStock;
+
 import com.example.demo.entities.DonorRequest;
 @Transactional
 @Repository

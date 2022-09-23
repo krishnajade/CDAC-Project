@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import BloodbankRegistrationForm from './componenet/BloodBank/BloodbankRegistrationForm';
 import HospitalRegistrationForm from './componenet/Hospital/HospitalRegistrationForm';
@@ -6,15 +5,15 @@ import DonorRegistrationForm from'./componenet/Donor/DonorRegistrationForm';
 import LoginForm from './componenet/Login/LoginForm'
 import { Footer } from './componenet/Frontpage/Footer';
 import { Header } from './componenet/Frontpage/Header';
-import { Link, Route, Routes } from 'react-router-dom';
+import {  Route, Routes } from 'react-router-dom';
 import Home from './componenet/Frontpage/Home';
-import SignUp from './componenet/Frontpage/SignUp';
 import Menubar from './componenet/Frontpage/Menubar';
 import BloodBankHome from './componenet/BloodBank/BloodBankHome';
 import HospitalHome from './componenet/Hospital/HospitalHome';
 import Faq from './componenet/Frontpage/faq';
 import ContactUs from './componenet/Frontpage/contactUs';
 import BloodBankProfile from './componenet/BloodBank/BloodBankProfile';
+
 import BloodBankStock from './componenet/BloodBank/BloodBankStock';
 import BloodRequest from './componenet/BloodBank/BloodRequest';
 import DonorRequest from './componenet/BloodBank/DonorRequest';
@@ -38,6 +37,7 @@ import RejectedHospitalRequest from './componenet/HospitalRequest/RejectedReques
 import RequestToBlood from './componenet/Patient/RequestToBlood';
 import PatientRegistration from './componenet/Patient/PatientRegistation';
 import DonorRequestStatus from './componenet/Donor/DonorRequestStatus';
+import DonorProfile from './componenet/Donor/DonorProfile';
 
 function App() {
   return (
@@ -78,6 +78,7 @@ function App() {
       <Route exact path="/AcceptedHospitalRequest" element={<AcceptedHospRequest/>}/> 
       <Route exact path="/RejectedHospitalRequest" element={<RejectedHospitalRequest/>}/> 
       <Route exact path="/DonorRequestStatus" element={<DonorRequestStatus/>}/>
+      <Route exact path="/DonorProfile" element={<DonorProfile/>}/>
 
 
       

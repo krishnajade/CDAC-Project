@@ -8,12 +8,15 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.entities.Donor;
 import com.example.demo.repositories.DonorRepository;
+import com.example.demo.repositories.LoginRepository;
 
 @Service
 public class DonorService {
 	
 	@Autowired
 	DonorRepository donorrepo;
+	@Autowired
+	LoginRepository logrepo;
 	
 	public List<Donor> getAll()
 	{
@@ -62,5 +65,15 @@ public class DonorService {
 		}
 		donorrepo.save(donor);
 		return donor;
+	}
+	public void deleteDonor(int id)
+	{
+		try {
+			logrepo.deleteById(id);
+			donorrepo.deleteByUserId(id);		
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.entities.Hospital;
+
 import com.example.demo.entities.HospitalRequest;
-import com.example.demo.entities.Patient;
+
 import com.example.demo.services.HospitalRequestService;
 
 @CrossOrigin(origins="*")
@@ -54,8 +54,5 @@ public class HospitalRequestController {
 	{
 		return hrs.updateHospitalRequest(hospital_request_id, request_status);
 	}
-	
-	
-
 }
 

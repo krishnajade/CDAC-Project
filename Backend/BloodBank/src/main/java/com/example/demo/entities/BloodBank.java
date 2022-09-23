@@ -1,6 +1,6 @@
 package com.example.demo.entities;
 
-import java.util.Set;
+
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,11 +9,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 @Entity
 @Table(name="bloodbank")
@@ -38,14 +38,12 @@ public class BloodBank {
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="user_id")
 	Login login;
-	/*@JsonIgnoreProperties("bloodbank")
-	@OneToMany(mappedBy = "bloodbank" , cascade = CascadeType.MERGE , orphanRemoval=true)
-	Set<BloodStock> bloodstock ;*/
+	
 	
 
 	public BloodBank() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 	public BloodBank(String bloodbank_name, String licence_no, String address,String city, String contact_number,
@@ -62,18 +60,7 @@ public class BloodBank {
 
 
 
-	/*public BloodBank(int bloodBank_id, String bloodbank_name, String licence_no, String address, String contact_number,
-			String website, String email, String username,String password,String member_type ) {
-		super();
-		this.bloodBank_id = bloodBank_id;
-		this.bloodbank_name = bloodbank_name;
-		this.licence_no = licence_no;
-		this.address = address;
-		this.contact_number = contact_number;
-		this.website = website;
-		this.email = email;
-		this.login = new Login(username,password,member_type);
-	}*/
+	
 	public int getBloodBank_id() {
 		return bloodBank_id;
 	}
@@ -133,13 +120,7 @@ public class BloodBank {
 	public void setLogin(Login login) {
 		this.login = login;
 	}
-	/*public Set<BloodStock> getBloodstock() {
-		return bloodstock;
-	}
-
-	public void setBloodstock(Set<BloodStock> bloodstock) {
-		this.bloodstock = bloodstock;
-	}*/
+	
 	@Override
 	public String toString() {
 		return "BloodBank [bloodBank_id=" + bloodBank_id + ", bloodbank_name=" + bloodbank_name + ", licence_no="

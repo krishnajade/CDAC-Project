@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Link,Route,Routes, useNavigate } from "react-router-dom";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import donorlogo from "../../asset/DonorIcon.jpg";
 import DonorProfile from "./DonorProfile";
 
 const DonorHome = () => {
   // const [Donor] = useState([]);
-  const donor_name=sessionStorage["donor_name"];
-  const donor_id=sessionStorage["donor_id"];
+  const donor_name = sessionStorage["donor_name"];
+  const donor_id = sessionStorage["donor_id"];
   const navigate = useNavigate();
 
   const DonorProfile = () => {
@@ -55,15 +55,15 @@ const DonorHome = () => {
                   transform: [{ scaleX: 2 }],
                 }}
               />
-             
             </div>
           </div>
-          <div class="center  border-right">
+          <div className="center  border-right">
             <div className="d-grid gap-4">
               <tr>
                 <Link to={`/donor/${donor_id}`}>
                   <button
                     className="btn btn-outline-info col-4  rounded-pill mt-2 "
+                    onClick={DonorProfile}
                     id="k1"
                     style={{
                       textDecoration: null,
@@ -86,7 +86,7 @@ const DonorHome = () => {
                       borderRadius: 140 / 2,
                       transform: [{ scaleX: 2 }],
                     }}
-                  >                   
+                  >
                     View Request Status
                   </button>
                 </Link>
@@ -122,10 +122,7 @@ const DonorHome = () => {
                 </Link>
               </tr>
 
-              <tr>
-                
-                
-              </tr>
+              <tr></tr>
             </div>
           </div>
         </div>

@@ -1,17 +1,11 @@
 package com.example.demo.entities;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="bloodstock")
@@ -30,10 +24,7 @@ public class BloodStock {
 	String availability;
 	@Column
 	int bloodbank_id;
-	/*@JsonIgnoreProperties("bloodstock")
-	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="bloodbank_id")
-	BloodBank bloodbank;*/
+	
 	
 	public int getBloodbank_id() {
 		return bloodbank_id;
@@ -43,7 +34,7 @@ public class BloodStock {
 	}
 	public BloodStock() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	public BloodStock(String bloodgroup, String bloodcomponent, int quantity, String availability) {
 		super();
@@ -83,9 +74,5 @@ public class BloodStock {
 	public void setAvailability(String availability) {
 		this.availability = availability;
 	}
-	/*public BloodBank getBloodbank() {
-		return bloodbank;
-	}
-	public void setBloodbank(BloodBank bloodbank) {
-		this.bloodbank = bloodbank;}*/
+	
 }

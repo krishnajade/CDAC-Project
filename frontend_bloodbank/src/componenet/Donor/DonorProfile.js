@@ -8,14 +8,13 @@ const init = {
   user_id: sessionStorage["user_id"],
   id: sessionStorage["donor_id"],
   donor_name: sessionStorage["donor_name"],
-  age:sessionStorage["age"],
+  age: sessionStorage["age"],
   address: sessionStorage["address"],
   city: sessionStorage["city"],
   phonenumber: sessionStorage["contact_number"],
   email: sessionStorage["email"],
-  bloodgroup:sessionStorage["bloodgroup"],
-  aadharno:sessionStorage["aadharno"]
- 
+  bloodgroup: sessionStorage["bloodgroup"],
+  aadharno: sessionStorage["aadharno"],
 };
 const reducer = (state, action) => {
   switch (action.type) {
@@ -23,11 +22,12 @@ const reducer = (state, action) => {
       return { ...state, [action.field]: action.val };
     case "clear":
       return init;
+    default:
   }
 };
 const DonorProfile = () => {
   const [reg, dispatch] = useReducer(reducer, init);
-  const [msg, setMsg] = useState("");
+  const [msg] = useState("");
   const navigate = useNavigate();
 
   const donorhome = () => {
@@ -52,18 +52,17 @@ const DonorProfile = () => {
     axios
       .put(`http://localhost:8080/updateDonor?donor_id=${id}`, {
         donor_name: reg.donor_name,
-      age:reg.age,
+        age: reg.age,
         address: reg.address,
         contact_number: reg.phonenumber,
-       aadharno:reg.aadharno,
-       bloodgroup:reg.bloodgroup,
+        aadharno: reg.aadharno,
+        bloodgroup: reg.bloodgroup,
         email: reg.email,
         city: reg.city,
       })
       .then((response) => {
         const result = response.data;
-        if (result.length != 0) {
-          
+        if (result.length !== 0) {
           sessionStorage["donor_name"] = result.donor_name;
           sessionStorage["address"] = result.address;
           sessionStorage["city"] = result.city;
@@ -71,7 +70,7 @@ const DonorProfile = () => {
           sessionStorage["email"] = result.email;
           sessionStorage["age"] = result.age;
           sessionStorage["bloodgroup"] = result.bloodgroup;
-          sessionStorage["aadharno"] = result.aadharno;       
+          sessionStorage["aadharno"] = result.aadharno;
         }
       })
       .catch((err) => console.log(err));
@@ -111,7 +110,6 @@ const DonorProfile = () => {
                     />
                   </div>
 
-                  
                   <div className="mb-3">
                     <label className="form-label">Address</label>
                     <input
@@ -225,8 +223,6 @@ const DonorProfile = () => {
                     />
                   </div>
 
-
-
                   <div className="mb-3">
                     <label className="form-label">Email</label>
                     <input
@@ -245,7 +241,7 @@ const DonorProfile = () => {
                       required
                     />
                   </div>
-                  
+
                   <div className="mb-3 text-center mt-2">
                     <button
                       className="btn btn-md btn-block btn-primary fw-bold"

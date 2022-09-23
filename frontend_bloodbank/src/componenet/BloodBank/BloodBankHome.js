@@ -79,7 +79,6 @@ const BloodBankHome = () => {
                   </button>
                 </Link>
 
-               
                 <Link to={`/bloodrequest`}>
                   <button
                     className="btn btn-danager col-4 rounded-pill"
@@ -146,7 +145,7 @@ const BloodBankHome = () => {
                     <b>Change Password</b>
                   </button>
                 </Link>
-               
+
                 <Link to={`/bloodstockform`}>
                   <button
                     className="btn btn-danager col-4  rounded-pill "

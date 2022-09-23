@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
-import './dashboard.css';
+import "./dashboard.css";
 function Bloodbankdashboard() {
   const [Bloodbanklist, setBloodbanklist] = useState([]);
 
@@ -13,20 +13,16 @@ function Bloodbankdashboard() {
     };
 
     getBloodbanklist();
-  },[]);
-
+  }, []);
 
   return (
     <React.Fragment>
       <Container>
-        <div className="row" >
-           
+        <div className="row">
           <div className="col-sm-8 text-success">
-            <h5 className="p-3 fw-bold text-black">
-              Blood Bank Details
-            </h5>
-          
-            <table className="table table-bordered text-white" >
+            <h5 className="p-3 fw-bold text-black">Blood Bank Details</h5>
+
+            <table className="table table-bordered text-white">
               <thead>
                 <tr>
                   <th>Bloodbank ID</th>
@@ -39,20 +35,25 @@ function Bloodbankdashboard() {
               </thead>
               <tbody>
                 {Bloodbanklist.map((bank1) => (
-                    <tr>
+                  <tr>
                     <td>{bank1.blood_bank_id}</td>
                     <td>{bank1.bloodbank_name}</td>
                     <td>{bank1.address}</td>
                     <td>{bank1.city}</td>
                     <td>{bank1.email}</td>
-                    
-                    <td><button href="" className="btn btn-success"> View </button> </td>
+
+                    <td>
+                      <button href="" className="btn btn-success">
+                        {" "}
+                        View{" "}
+                      </button>{" "}
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-        </div>      
+        </div>
       </Container>
     </React.Fragment>
   );
