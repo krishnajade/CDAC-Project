@@ -6,7 +6,7 @@ import axios from "axios";
 
 const init = {
   user_id: sessionStorage["user_id"],
-  id: sessionStorage["donor_id"],
+  donor_id: sessionStorage["donor_id"],
   donor_name: sessionStorage["donor_name"],
   age: sessionStorage["age"],
   address: sessionStorage["address"],
@@ -29,28 +29,42 @@ const DonorProfile = () => {
   const [reg, dispatch] = useReducer(reducer, init);
   const [msg] = useState("");
   const navigate = useNavigate();
+  const donor_id=sessionStorage["donor_id"];
 
   const donorhome = () => {
     navigate("/donorhome");
   };
-  const deletedonor = (id, e) => {
-    e.preventDefault();
-    if (window.confirm("confirm delete")) {
-      axios
-        .delete(`http://localhost:8080/deleteDonor?user_id=${id}`)
-        .then((res) => console.log("Deleted..."))
-        .catch((err) => console.log(err));
-      alert("Account Deleted");
-      navigate("/");
+  // const deletedonor = (id, e) => {
+  //   e.preventDefault();
+  //   if (window.confirm("confirm delete")) {
+  //     axios
+  //       .delete(`http://localhost:8080/deleteDonor?user_id=${id}`)
+  //       .then((res) => console.log("Deleted..."))
+  //       .catch((err) => console.log(err));
+  //     alert("Account Deleted");
+  //     navigate("/");
+  //   } else {
+  //     window.alert("Account not deleted");
+  //   }
+  // };
+
+  const deleteDonor = async => {
+    
+    var result = window.confirm("Confirm To delete ?");
+    if (result===true) {
+       sessionStorage.clear();
+      axios.delete(`http://localhost:8080/deleteDonor/${donor_id}`);
+      donorhome();
     } else {
-      window.alert("Account not deleted");
+      DonorProfile();
     }
   };
-  const sendData = (id, e) => {
+
+  const sendData = (donor_id, e) => {
     e.preventDefault();
     console.log("hi");
     axios
-      .put(`http://localhost:8080/updateDonor?donor_id=${id}`, {
+      .put(`http://localhost:8080/updateDonor?donor_id=${donor_id}`, {
         donor_name: reg.donor_name,
         age: reg.age,
         address: reg.address,
@@ -208,26 +222,26 @@ const DonorProfile = () => {
                     <label className="form-label">Bloodgroup</label>
                     <br></br>
                     <select
-                          name="bloodgroup"
-                          value={reg.bloodgroup}
-                          onChange={(e) => {
-                            dispatch({
-                              type: "update",
-                              field: "bloodgroup",
-                              val: e.target.value,
-                            });
-                          }}
-                        >
-                          <option>Select blood Group</option>
-                          <option value="A+">A+</option>
-                          <option value="A-">A-</option>
-                          <option value="B+">B+</option>
-                          <option value="B-">B-</option>
-                          <option value="AB+">AB+</option>
-                          <option value="AB-">AB-</option>
-                          <option value="O+">O+</option>
-                          <option value="O-">O-</option>
-                        </select>
+                      name="bloodgroup"
+                      value={reg.bloodgroup}
+                      onChange={(e) => {
+                        dispatch({
+                          type: "update",
+                          field: "bloodgroup",
+                          val: e.target.value,
+                        });
+                      }}
+                    >
+                      <option>Select blood Group</option>
+                      <option value="A+">A+</option>
+                      <option value="A-">A-</option>
+                      <option value="B+">B+</option>
+                      <option value="B-">B-</option>
+                      <option value="AB+">AB+</option>
+                      <option value="AB-">AB-</option>
+                      <option value="O+">O+</option>
+                      <option value="O-">O-</option>
+                    </select>
                   </div>
 
                   <div className="mb-3">
@@ -269,13 +283,13 @@ const DonorProfile = () => {
                     >
                       Update donor
                     </button>
-                    <span></span> <span> </span>
+                    <span></span>
+                    <span></span>
                     <button
                       className="btn btn-md btn-block btn-danger fw-bold "
+                      type="reset"
                       style={{ marginLeft: "10px" }}
-                      onClick={(e) => {
-                        deletedonor(reg.id, e);
-                      }}
+                      onClick={deleteDonor}
                     >
                       Delete donor
                     </button>
